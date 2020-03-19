@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.park.dao.GarageMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.park.model.Garage">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="telephone" property="telephone"/>
+        <result column="manager" property="manager"/>
+        <result column="latitude" property="latitude"/>
+        <result column="longitude" property="longitude"/>
+        <result column="address" property="address"/>
+        <result column="sum" property="sum"/>
+        <result column="rows" property="rows"/>
+        <result column="cols" property="cols"/>
+        <result column="price" property="price"/>
+        <result column="img" property="img"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <select id="selectGarageList" resultType="com.park.pojo.Marker">
+        SELECT
+            id,latitude,longitude,`name` AS title,address,`sum`,
+            total AS leisure,price,telephone,manager
+        FROM
+            tb_garage a LEFT JOIN
+            (
+                SELECT
+                    garage_id,
+                    COUNT(*) AS total
+                FROM
+                    tb_garage_car
+                WHERE
+                    `status` = 0
+                GROUP BY
+                    garage_id
+            ) b ON a.id = b.garage_id
+    </select>
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.park.dao.OrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.park.model.Order">
+        <id column="id" property="id"/>
+        <result column="order_id" property="orderId"/>
+        <result column="member_id" property="memberId"/>
+        <result column="nickname" property="nickname"/>
+        <result column="license" property="license"/>
+        <result column="garage_id" property="garageId"/>
+        <result column="garage_name" property="garageName"/>
+        <result column="car_id" property="carId"/>
+        <result column="price" property="price"/>
+        <result column="amount" property="amount"/>
+        <result column="status" property="status"/>
+        <result column="pay_type" property="payType"/>
+        <result column="remark" property="remark"/>
+        <result column="start_time" property="startTime"/>
+        <result column="end_time" property="endTime"/>
+    </resultMap>
+
+    <select id="selectOrderChart" resultType="com.park.pojo.ChartData">
+        select
+          date(end_time) date,sum(amount) total
+        from tb_order
+        where
+          end_time between #{startTime} and #{endTime}
+          and status = 1
+        group by date(end_time)
+    </select>
+    <select id="selectOrderChartByYear" resultType="com.park.pojo.ChartData">
+        select
+          date_format(end_time,'%Y-%m') date,sum(amount) total
+        from tb_order
+        where
+          YEAR(end_time) = #{year}
+          and status = 1
+        group by date_format(end_time,'%Y-%m')
+    </select>
+
+    <select id="getOrderByStatus" resultType="com.park.model.Order">
+        select * from tb_order where member_id = #{memberId} and status = 0
+    </select>
+</mapper>

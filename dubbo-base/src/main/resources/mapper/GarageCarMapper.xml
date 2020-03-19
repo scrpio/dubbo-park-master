@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.park.dao.GarageCarMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.park.model.GarageCar">
+        <id column="id" property="id"/>
+        <result column="car_id" property="carId"/>
+        <result column="status" property="status"/>
+        <result column="garage_id" property="garageId"/>
+        <result column="garage_name" property="garageName"/>
+        <result column="rows" property="rows"/>
+        <result column="cols" property="cols"/>
+    </resultMap>
+
+</mapper>

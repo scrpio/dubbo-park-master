@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.park.dao.RepairMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.park.model.Repair">
+        <id column="id" property="id"/>
+        <result column="type" property="type"/>
+        <result column="name" property="name"/>
+        <result column="error_time" property="errorTime"/>
+        <result column="garage_id" property="garageId"/>
+        <result column="garage_name" property="garageName"/>
+        <result column="repairer" property="repairer"/>
+        <result column="phone" property="phone"/>
+        <result column="status" property="status"/>
+        <result column="remark" property="remark"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <select id="selectRatePie" resultType="com.park.pojo.ChartPie">
+        SELECT
+            b.garage_name as name,
+            CAST(CASE WHEN b.c = 0 THEN 0 ELSE a.b / b.c END AS DECIMAL (18, 2)) AS `value`
+        FROM
+            (
+                SELECT
+                    COUNT(garage_name) AS b,
+                    garage_name
+                FROM
+                    tb_repair
+                GROUP BY
+                    garage_name
+            ) a,
+            (
+                SELECT
+                    COUNT(garage_name) AS c,
+                    garage_name
+                FROM
+                    tb_order
+                GROUP BY
+                    garage_name
+            ) b
+        WHERE
+            a.garage_name = b.garage_name
+    </select>
+
+</mapper>
