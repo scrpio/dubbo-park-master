@@ -46,7 +46,7 @@ public class RechargeServiceImpl extends ServiceImpl<RechargeMapper, Recharge> i
             throw new TransException(TransCode.INSERT_FAIL);
         }
         EntityWrapper<Member> entity = new EntityWrapper<>();
-        Wrapper<Member> wrapper = entity.eq("member_id", recharge.getMemberId());
+        Wrapper<Member> wrapper = entity.eq("id", recharge.getMemberId());
         List<Member> list = memberMapper.selectList(wrapper);
         if (list.size() > 0) {
             Member member = list.get(0);
