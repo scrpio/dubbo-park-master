@@ -2,7 +2,10 @@ package com.park.service;
 
 import com.baomidou.mybatisplus.service.IService;
 import com.park.model.Recharge;
+import com.park.pojo.BillVo;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * <p>
@@ -23,4 +26,6 @@ public interface RechargeService extends IService<Recharge> {
     int editRechargeStatus(Long id, Integer status);
 
     Recharge getApiRecharge(String orderId);
+
+    List<BillVo> getBillList(Long memberId);
 }

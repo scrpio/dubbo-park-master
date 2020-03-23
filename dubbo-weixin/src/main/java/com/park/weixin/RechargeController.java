@@ -35,4 +35,9 @@ public class RechargeController {
         }
         return new ResultUtil<Recharge>().setSuccessMsg("删除成功");
     }
+
+    @GetMapping("/api/getBillList")
+    public Result<Object> getBillList(@RequestParam Long memberId){
+        return new ResultUtil<Object>().setData(rechargeService.getBillList(memberId));
+    }
 }

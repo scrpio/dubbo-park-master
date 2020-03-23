@@ -14,4 +14,35 @@
         <result column="create_time" property="createTime"/>
     </resultMap>
 
+    <select id="getBillList" resultType="com.park.pojo.BillVo">
+        SELECT
+            *
+        FROM
+            (
+                SELECT
+                    member_id as memberId,
+                    '余额充值' AS type,
+                    money,
+                    `status`,
+                    create_time
+                FROM
+                    tb_recharge
+                UNION
+                    (
+                        SELECT
+                            member_id as memberId,
+                            '停车消费' AS type,
+                            0-amount AS money,
+                            `status`,
+                            end_time AS create_time
+                        FROM
+                            tb_order
+                        WHERE
+                            pay_type = 1
+                    )
+            ) AS t
+        WHERE t.memberId = #{memberId}
+        ORDER BY
+            t.create_time desc
+    </select>
 </mapper>

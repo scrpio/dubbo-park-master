@@ -11,6 +11,7 @@ import com.park.dao.MemberMapper;
 import com.park.dao.RechargeMapper;
 import com.park.model.Member;
 import com.park.model.Recharge;
+import com.park.pojo.BillVo;
 import com.park.service.RechargeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -85,5 +86,10 @@ public class RechargeServiceImpl extends ServiceImpl<RechargeMapper, Recharge> i
             return rechargeList.get(0);
         }
         return null;
+    }
+
+    @Override
+    public List<BillVo> getBillList(Long memberId) {
+        return rechargeMapper.getBillList(memberId);
     }
 }
