@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50719
 File Encoding         : 65001
 
-Date: 2020-03-19 15:33:24
+Date: 2020-03-25 14:36:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -80,7 +80,7 @@ CREATE TABLE `tb_garage` (
 -- ----------------------------
 -- Records of tb_garage
 -- ----------------------------
-INSERT INTO `tb_garage` VALUES ('1', '智汇Park立体停车库', '11111111', '未知', '23.12463', '113.36199', '广东省广州市天河区元岗大道310号', '46', '6', '8', '5.00', null, '2019-12-17 15:53:32');
+INSERT INTO `tb_garage` VALUES ('1', '智汇Park立体停车库', '11111111', '未知', '23.12463', '113.36199', '广东省广州市天河区元岗大道310号', '48', '6', '8', '5.00', null, '2019-12-17 15:53:32');
 INSERT INTO `tb_garage` VALUES ('2', '智能停车库测试1', '11111111', '未知', '23.12247', '113.36148', '广东省广州市天河区黄埔大道南员村二横路口', '10', '2', '5', '6.00', null, '2019-12-19 10:49:58');
 INSERT INTO `tb_garage` VALUES ('3', '智能停车库测试2', '11111111', '未知', '23.12507', '113.36042', '广东省广州市天河区黄埔大道中179号', '30', '3', '10', '5.00', null, '2019-12-19 10:51:40');
 INSERT INTO `tb_garage` VALUES ('4', '智能停车库测试3', '11111111', '未知', '23.126749', '113.350493', '广东省广州市天河区黄埔大道西613号', '15', '5', '3', '8.00', null, '2019-12-19 10:53:03');
@@ -332,7 +332,7 @@ CREATE TABLE `tb_log` (
   `ip` varchar(64) DEFAULT NULL COMMENT 'IP地址',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_log
@@ -402,6 +402,9 @@ INSERT INTO `tb_log` VALUES ('62', '1', 'admin', '业务日志', '修改车库�
 INSERT INTO `tb_log` VALUES ('63', '1', 'admin', '业务日志', '修改车库信息', '121', 'com.park.admin.controller.GarageController.editGarage()', null, '127.0.0.1', '2020-03-19 15:13:54');
 INSERT INTO `tb_log` VALUES ('64', '1', 'admin', '业务日志', '修改车库信息', '96', 'com.park.admin.controller.GarageController.editGarage()', null, '127.0.0.1', '2020-03-19 15:14:10');
 INSERT INTO `tb_log` VALUES ('65', '1', 'admin', '业务日志', '修改车库信息', '58', 'com.park.admin.controller.GarageController.editGarage()', null, '127.0.0.1', '2020-03-19 15:14:22');
+INSERT INTO `tb_log` VALUES ('66', '1', 'admin', '登录日志', '账号密码登录', '758', 'com.park.admin.controller.LoginController.accountLogin()', null, '0:0:0:0:0:0:0:1', '2020-03-19 17:30:47');
+INSERT INTO `tb_log` VALUES ('67', '1', 'admin', '业务日志', '修改车库信息', '55', 'com.park.admin.controller.GarageController.editGarage()', null, '0:0:0:0:0:0:0:1', '2020-03-19 17:31:23');
+INSERT INTO `tb_log` VALUES ('68', '1', 'admin', '登录日志', '账号密码登录', '90', 'com.park.admin.controller.LoginController.accountLogin()', null, '0:0:0:0:0:0:0:1', '2020-03-19 17:37:00');
 
 -- ----------------------------
 -- Table structure for tb_member
@@ -430,12 +433,12 @@ CREATE TABLE `tb_member` (
 -- ----------------------------
 -- Records of tb_member
 -- ----------------------------
-INSERT INTO `tb_member` VALUES ('1', 'o9OFC1b9PpyvB2hFwSOJrDYFMiKQ', 'Pierre', '粤A12345', '12312341234', '1991-12-26', '2', 'Guangdong', 'Guangzhou', '0', '0', '0', '0.00', 'https://wx.qlogo.cn/mmopen/vi_32/jDwTqZkwWiceNaeh7cdbIN0pr2p31Lsb3TdYib95Tm7xee2OnpGvHbX7iapibKUgHhuzKu4c2j6dIRwGhpnnLDv86Q/132', '2019-12-26 14:02:14', '2019-12-26 14:10:49');
-INSERT INTO `tb_member` VALUES ('2', 'o9OFC1b9PpyvB2hFwSOJrDYFMrKg', 'Monroe', '粤A52314', '12312341234', '2019-12-23', '1', 'Guangdong', 'Guangzhou', '0', '0', '0', '0.00', 'https://wx.qlogo.cn/mmopen/vi_32/jDwTqZkwWiceNaeh7cdbIN0pr2p31Lsb3TdYib95Tm7xee2OnpGvHbX7iapibKUgHhuzKu4c2j6dIRwGhpnnLDv86Q/132', '2019-12-26 16:43:57', '2019-12-26 17:00:16');
-INSERT INTO `tb_member` VALUES ('3', 'o9OFC1b9PpyvB2hFwSOJrDYFMrKo', 'Immanuel', '粤A52139', '12312341234', '2006-09-19', '2', 'Guangdong', 'Guangzhou', '0', '0', '0', '0.00', 'https://wx.qlogo.cn/mmopen/vi_32/jDwTqZkwWiceNaeh7cdbIN0pr2p31Lsb3TdYib95Tm7xee2OnpGvHbX7iapibKUgHhuzKu4c2j6dIRwGhpnnLDv86Q/132', '2019-12-26 16:19:03', '2019-12-26 16:23:04');
-INSERT INTO `tb_member` VALUES ('4', 'o9OFC1b9PpyvB2hFwSOJrDYFMrKQ', 'Christy', '粤A52134', '18546587895', '1992-12-18', '2', 'Guangdong', 'Guangzhou', '1', '0', '10', '0.00', 'https://wx.qlogo.cn/mmopen/vi_32/jDwTqZkwWiceNaeh7cdbIN0pr2p31Lsb3TdYib95Tm7xee2OnpGvHbX7iapibKUgHhuzKu4c2j6dIRwGhpnnLDv86Q/132', '2019-12-26 17:01:15', '2020-03-12 17:19:34');
-INSERT INTO `tb_member` VALUES ('5', 'o9OFC1b9PpyvB2hFwSOJrDYFMxKQ', 'Joanne', '粤A42135', '12312341234', '1995-06-25', '1', 'Guangdong', 'Guangzhou', '0', '0', '0', '0.00', 'https://wx.qlogo.cn/mmopen/vi_32/jDwTqZkwWiceNaeh7cdbIN0pr2p31Lsb3TdYib95Tm7xee2OnpGvHbX7iapibKUgHhuzKu4c2j6dIRwGhpnnLDv86Q/132', '2019-12-26 14:20:38', '2019-12-26 14:56:55');
-INSERT INTO `tb_member` VALUES ('6', 'oJNzy5DlWs6Tzbtqec8__g3QP4Hc', 'Lisa', '粤A85213', '18594069681', '1992-03-16', '2', 'Guangdong', 'Guangzhou', '1', '0', '24', '0.00', 'https://wx.qlogo.cn/mmopen/vi_32/MyZNlsg81ZYUQZ8xFuNB35OIk3SpclnJpoTuB6oZMGSrFWI2EqFqF2PbUhiafsnXmFWYOwvibbvgR5325scw0uiaw/132', '2020-03-17 09:35:38', '2020-03-19 15:28:31');
+INSERT INTO `tb_member` VALUES ('1', 'o9OFC1b9PpyvB2hFwSOJrDYFMiKQ', 'Pierre', '粤A00000', '11111111111', '1991-12-26', '2', 'Guangdong', 'Guangzhou', '0', '0', '0', '0.00', 'https://wx.qlogo.cn/mmopen/vi_32/jDwTqZkwWiceNaeh7cdbIN0pr2p31Lsb3TdYib95Tm7xee2OnpGvHbX7iapibKUgHhuzKu4c2j6dIRwGhpnnLDv86Q/132', '2019-12-26 14:02:14', '2019-12-26 14:10:49');
+INSERT INTO `tb_member` VALUES ('2', 'o9OFC1b9PpyvB2hFwSOJrDYFMrKg', 'Monroe', '粤A00000', '11111111111', '2019-12-23', '1', 'Guangdong', 'Guangzhou', '0', '0', '0', '0.00', 'https://wx.qlogo.cn/mmopen/vi_32/jDwTqZkwWiceNaeh7cdbIN0pr2p31Lsb3TdYib95Tm7xee2OnpGvHbX7iapibKUgHhuzKu4c2j6dIRwGhpnnLDv86Q/132', '2019-12-26 16:43:57', '2019-12-26 17:00:16');
+INSERT INTO `tb_member` VALUES ('3', 'o9OFC1b9PpyvB2hFwSOJrDYFMrKo', 'Immanuel', '粤A00000', '11111111111', '2006-09-19', '2', 'Guangdong', 'Guangzhou', '0', '0', '0', '0.00', 'https://wx.qlogo.cn/mmopen/vi_32/jDwTqZkwWiceNaeh7cdbIN0pr2p31Lsb3TdYib95Tm7xee2OnpGvHbX7iapibKUgHhuzKu4c2j6dIRwGhpnnLDv86Q/132', '2019-12-26 16:19:03', '2019-12-26 16:23:04');
+INSERT INTO `tb_member` VALUES ('4', 'o9OFC1b9PpyvB2hFwSOJrDYFMrKQ', 'Christy', '粤A00000', '11111111111', '1992-12-18', '2', 'Guangdong', 'Guangzhou', '1', '0', '10', '0.00', 'https://wx.qlogo.cn/mmopen/vi_32/jDwTqZkwWiceNaeh7cdbIN0pr2p31Lsb3TdYib95Tm7xee2OnpGvHbX7iapibKUgHhuzKu4c2j6dIRwGhpnnLDv86Q/132', '2019-12-26 17:01:15', '2020-03-12 17:19:34');
+INSERT INTO `tb_member` VALUES ('5', 'o9OFC1b9PpyvB2hFwSOJrDYFMxKQ', 'Joanne', '粤A00000', '11111111111', '1995-06-25', '1', 'Guangdong', 'Guangzhou', '0', '0', '0', '0.00', 'https://wx.qlogo.cn/mmopen/vi_32/jDwTqZkwWiceNaeh7cdbIN0pr2p31Lsb3TdYib95Tm7xee2OnpGvHbX7iapibKUgHhuzKu4c2j6dIRwGhpnnLDv86Q/132', '2019-12-26 14:20:38', '2019-12-26 14:56:55');
+INSERT INTO `tb_member` VALUES ('6', 'oJNzy5DlWs6Tzbtqec8__g3QP4Hc', '测试号', '粤A00000', '11111111111', '1992-03-16', '2', 'Guangdong', 'Guangzhou', '1', '1', '26', '320.00', 'https://wx.qlogo.cn/mmopen/vi_32/MyZNlsg81ZYUQZ8xFuNB35OIk3SpclnJpoTuB6oZMGSrFWI2EqFqF2PbUhiafsnXmFWYOwvibbvgR5325scw0uiaw/132', '2020-03-17 09:35:38', '2020-03-25 10:16:10');
 
 -- ----------------------------
 -- Table structure for tb_menu
@@ -533,20 +536,22 @@ CREATE TABLE `tb_order` (
   `start_time` datetime DEFAULT NULL COMMENT '停车时间',
   `end_time` datetime DEFAULT NULL COMMENT '取车时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_order
 -- ----------------------------
-INSERT INTO `tb_order` VALUES ('1', '158382128628044', '6', 'Lisa', '粤A52134', '1', '智汇Park立体停车库', 'A1', '5.00', '100.00', '1', '0', null, '2020-03-16 14:21:26', '2020-03-17 10:52:29');
-INSERT INTO `tb_order` VALUES ('2', '158399651789849', '6', 'Lisa', '粤A52134', '2', '智能停车库测试1', 'A1', '6.00', '12.00', '1', '0', null, '2020-03-16 15:01:58', '2020-03-16 17:01:58');
-INSERT INTO `tb_order` VALUES ('3', '158441168071474', '6', 'Lisa', '粤A85213', '3', '智能停车库测试2', 'A1', '5.00', '15.00', '1', '0', null, '2020-03-17 10:21:21', '2020-03-17 14:07:58');
-INSERT INTO `tb_order` VALUES ('4', '158442529674361', '6', 'Lisa', '粤A85213', '4', '智能停车库测试3', 'A1', '8.00', '8.00', '1', '0', null, '2020-03-17 13:08:17', '2020-03-17 14:50:21');
-INSERT INTO `tb_order` VALUES ('5', '158442782912177', '6', 'Lisa', '粤A85213', '5', '智能停车库测试4', 'A1', '7.00', '21.00', '1', '0', null, '2020-03-17 14:50:29', '2020-03-17 17:57:36');
-INSERT INTO `tb_order` VALUES ('6', '158449576437867', '6', 'Lisa', '粤A85213', '1', '智汇Park立体停车库', 'A1', '5.00', '25.00', '1', '0', null, '2020-03-18 09:42:44', '2020-03-18 14:48:54');
-INSERT INTO `tb_order` VALUES ('7', '158460054231939', '6', 'Lisa', '粤A85213', '1', '智汇Park立体停车库', 'A1', '5.00', '30.00', '1', '0', null, '2020-03-19 08:49:02', '2020-03-19 15:17:07');
-INSERT INTO `tb_order` VALUES ('8', '158460224553397', '6', 'Lisa', '粤A85213', '3', '智能停车库测试2', 'A1', '5.00', '25.00', '1', '0', null, '2020-03-19 10:17:26', '2020-03-19 15:20:33');
-INSERT INTO `tb_order` VALUES ('9', '158460283506957', '6', 'Lisa', '粤A85213', '1', '智汇Park立体停车库', 'A1', '5.00', '20.00', '1', '0', null, '2020-03-19 11:27:15', '2020-03-19 15:28:31');
+INSERT INTO `tb_order` VALUES ('1', '158382128628044', '6', '测试号', '粤A00000', '1', '智汇Park立体停车库', 'A1', '5.00', '100.00', '1', '0', null, '2020-03-16 14:21:26', '2020-03-17 10:52:29');
+INSERT INTO `tb_order` VALUES ('2', '158399651789849', '6', '测试号', '粤A00000', '2', '智能停车库测试1', 'A1', '6.00', '12.00', '1', '0', null, '2020-03-16 15:01:58', '2020-03-16 17:01:58');
+INSERT INTO `tb_order` VALUES ('3', '158441168071474', '6', '测试号', '粤A00000', '3', '智能停车库测试2', 'A1', '5.00', '15.00', '1', '0', null, '2020-03-17 10:21:21', '2020-03-17 14:07:58');
+INSERT INTO `tb_order` VALUES ('4', '158442529674361', '6', '测试号', '粤A00000', '4', '智能停车库测试3', 'A1', '8.00', '8.00', '1', '0', null, '2020-03-17 13:08:17', '2020-03-17 14:50:21');
+INSERT INTO `tb_order` VALUES ('5', '158442782912177', '6', '测试号', '粤A00000', '5', '智能停车库测试4', 'A1', '7.00', '21.00', '1', '0', null, '2020-03-17 14:50:29', '2020-03-17 17:57:36');
+INSERT INTO `tb_order` VALUES ('6', '158449576437867', '6', '测试号', '粤A00000', '1', '智汇Park立体停车库', 'A1', '5.00', '25.00', '1', '0', null, '2020-03-18 09:42:44', '2020-03-18 14:48:54');
+INSERT INTO `tb_order` VALUES ('7', '158460054231939', '6', '测试号', '粤A00000', '1', '智汇Park立体停车库', 'A1', '5.00', '30.00', '1', '0', null, '2020-03-19 08:49:02', '2020-03-19 15:17:07');
+INSERT INTO `tb_order` VALUES ('8', '158460224553397', '6', '测试号', '粤A00000', '3', '智能停车库测试2', 'A1', '5.00', '25.00', '1', '0', null, '2020-03-19 10:17:26', '2020-03-19 15:20:33');
+INSERT INTO `tb_order` VALUES ('9', '158460283506957', '6', '测试号', '粤A00000', '1', '智汇Park立体停车库', 'A1', '5.00', '20.00', '1', '0', null, '2020-03-19 11:27:15', '2020-03-19 15:28:31');
+INSERT INTO `tb_order` VALUES ('10', '158468424591483', '6', '测试号', '粤A00000', '6', '智能停车库测试5', 'A1', '6.00', '12.00', '1', '1', null, '2020-03-20 14:04:06', '2020-03-20 16:04:06');
+INSERT INTO `tb_order` VALUES ('11', '158495598312314', '6', '测试号', '粤A00000', '6', '智能停车库测试5', 'A1', '6.00', '18.00', '1', '1', null, '2020-03-23 14:33:03', '2020-03-23 17:33:35');
 
 -- ----------------------------
 -- Table structure for tb_recharge
@@ -562,11 +567,17 @@ CREATE TABLE `tb_recharge` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_recharge
 -- ----------------------------
+INSERT INTO `tb_recharge` VALUES ('2', '158468544781189', '6', '测试号', '100.00', '1', null, '2020-03-20 14:24:08');
+INSERT INTO `tb_recharge` VALUES ('3', '158468565064573', '6', '测试号', '50.00', '1', null, '2020-03-20 14:27:31');
+INSERT INTO `tb_recharge` VALUES ('4', '158468574070264', '6', '测试号', '60.00', '1', null, '2020-03-20 14:29:01');
+INSERT INTO `tb_recharge` VALUES ('5', '158468603238402', '6', '测试号', '30.00', '1', null, '2020-03-20 14:33:52');
+INSERT INTO `tb_recharge` VALUES ('6', '158468610497254', '6', '测试号', '70.00', '1', null, '2020-03-20 14:35:05');
+INSERT INTO `tb_recharge` VALUES ('7', '158468622273256', '6', '测试号', '40.00', '1', null, '2020-03-20 14:37:03');
 
 -- ----------------------------
 -- Table structure for tb_repair

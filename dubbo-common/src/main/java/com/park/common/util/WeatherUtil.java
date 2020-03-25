@@ -18,9 +18,9 @@ public class WeatherUtil {
     /**
      * Mob全国天气预报接口
      */
-    private final static String WEATHER_IP = "http://apicloud.mob.com/v1/weather/ip?key=275e1ff67aa34&ip=";
-    private final static String CITYS = "http://apicloud.mob.com/v1/weather/citys?key=275e1ff67aa34";
-    private final static String WEATHER_CITY = "http://apicloud.mob.com/v1/weather/query?key=275e1ff67aa34";
+    private final static String WEATHER_IP = "http://apicloud.mob.com/v1/weather/ip?key=&ip=";
+    private final static String CITYS = "http://apicloud.mob.com/v1/weather/citys?key=";
+    private final static String WEATHER_CITY = "http://apicloud.mob.com/v1/weather/query?key=";
 
     /**
      * 发送HttpGet请求

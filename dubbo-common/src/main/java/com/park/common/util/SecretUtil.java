@@ -141,9 +141,9 @@ public class SecretUtil {
     }
 
     public static void main(String[] args) {
-        String encryptedData = "A9LhXU/3QvyvYVFl9wk5WESEP+cY6bFICfTazsmTUoUeYzxpefDGY7txD8EJNeBKw6vcIxOyxkJQ6jlUTk+mDxEKwq0rEnTgtRiZLz7QaxK+rLKMNh5xUIzvXCC+/Z+92+6p0kwnYW6oMA8rIf2f8kbN5sRusDS9JJI5nSqeSxX3hAgghIIsu3TAp+WprMNOYYB6hNoSirjgdl9/juLLrQ==";
-        String sessionKey = "1Vi2MD7zH0wtQKC7WCey2g==";
-        String iv = "reugfq5NErTNPxoLHAPJWQ==";
+        String encryptedData = "";
+        String sessionKey = "";
+        String iv = "";
         String str = decrypt(encryptedData, sessionKey, iv);
         JSONObject jsonObject = JSONObject.parseObject(str);
         String phone = jsonObject.getString("phoneNumber");
